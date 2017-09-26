@@ -1,0 +1,17 @@
+{
+  "name": "ft-node-red",
+  "version": "1.0.0",
+  "description": "fischertechnik on node red",
+  "main": "ftmqtt.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  
+    "node-red" : {
+        "nodes": {
+            "ft-node-red": "ftmqtt.js"
+        }
+    }
+}

@@ -11,7 +11,7 @@
   limitations under the License.
 -->
 
-<script type="text/x-red" data-template-name="mqtt in">
+<script type="text/x-red" data-template-name="ftmqtt in">
     <div class="form-row">
         <label for="node-input-broker"><i class="fa fa-globe"></i> <span data-i18n="mqtt.label.broker"></span></label>
         <input type="text" id="node-input-broker">
@@ -34,7 +34,7 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="mqtt in">
+<script type="text/x-red" data-help-name="ftmqtt in">
 <p>Connects to a MQTT broker and subscribes to messages from the specified topic.</p>
     <h3>Outputs</h3>
     <dl class="message-properties">
@@ -55,13 +55,13 @@
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType('mqtt in',{
-        category: 'input',
+    RED.nodes.registerType('ftmqtt in',{
+        category: 'fischertechnik',
         defaults: {
             name: {value:""},
             topic: {value:"",required:true,validate: RED.validators.regex(/^(#$|(\+|[^+#]*)(\/(\+|[^+#]*))*(\/(\+|#|[^+#]*))?$)/)},
             qos: {value: "2"},
-            broker: {type:"mqtt-broker", required:true}
+            broker: {type:"ftmqtt-broker", required:true}
         },
         color:"#d8bfd8",
         inputs:0,
@@ -81,7 +81,7 @@
     });
 </script>
 
-<script type="text/x-red" data-template-name="mqtt out">
+<script type="text/x-red" data-template-name="ftmqtt out">
     <div class="form-row">
         <label for="node-input-broker"><i class="fa fa-globe"></i> <span data-i18n="mqtt.label.broker"></span></label>
         <input type="text" id="node-input-broker">
@@ -111,7 +111,7 @@
     <div class="form-tips"><span data-i18n="mqtt.tip"></span></div>
 </script>
 
-<script type="text/x-red" data-help-name="mqtt out">
+<script type="text/x-red" data-help-name="ftmqtt out">
     <p>Connects to a MQTT broker and publishes messages.</p>
     <h3>Inputs</h3>
     <dl class="message-properties">
@@ -138,14 +138,14 @@
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType('mqtt out',{
-        category: 'output',
+    RED.nodes.registerType('ftmqtt out',{
+        category: 'fischertechnik',
         defaults: {
             name: {value:""},
             topic: {value:""},
             qos: {value:""},
             retain: {value:""},
-            broker: {type:"mqtt-broker", required:true}
+            broker: {type:"ftmqtt-broker", required:true}
         },
         color:"#d8bfd8",
         inputs:1,
@@ -161,7 +161,7 @@
     });
 </script>
 
-<script type="text/x-red" data-template-name="mqtt-broker">
+<script type="text/x-red" data-template-name="ftmqtt-broker">
     <div class="form-row">
         <label for="node-config-input-name"><i class="fa fa-tag"></i> <span data-i18n="common.label.name"></span></label>
         <input type="text" id="node-config-input-name" data-i18n="[placeholder]common.label.name">
@@ -256,7 +256,7 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="mqtt-broker">
+<script type="text/x-red" data-help-name="ftmqtt-broker">
     <p>A minimum MQTT broker connection requires only a broker server address to be added to the default configuration.</p>
     <p>To secure the connection with SSL/TLS, a TLS Configuration must also be configured and selected.</p>
     <p>If you create a Client ID it must be unique to the broker you are connecting to.</p>
@@ -264,7 +264,7 @@
 </script>
 
 <script type="text/javascript">
-    RED.nodes.registerType('mqtt-broker',{
+    RED.nodes.registerType('ftmqtt-broker',{
         category: 'config',
         defaults: {
             name: {value:""},
