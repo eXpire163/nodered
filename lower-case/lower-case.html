@@ -1,6 +1,6 @@
 <script type="text/javascript">
-    RED.nodes.registerType('lower-case',{
-        category: 'function',
+    RED.nodes.registerType('motor-out',{
+        category: 'fischertechnik',
         color: '#a6bbcf',
         defaults: {
             name: {value:""}
@@ -9,19 +9,28 @@
         outputs:1,
         icon: "file.png",
         label: function() {
-            return this.name||"lower-case";
+            return this.name||"motor-out";
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="lower-case">
+<script type="text/x-red" data-template-name="motor-out">
     <div class="form-row">
     <p>hell of heaven</p>
-        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
-        <input type="text" id="node-input-name" placeholder="Name">
+        <label for="node-input-motornumber"><i class="icon-tag"></i> Motor number</label>
+        <input type="text" id="node-input-motornumber" placeholder="Number">
+        <br />
+        <label for="node-input-motordir"><i class="icon-tag"></i> Motor direction</label>
+        <select id="node-input-motordir">
+            <option value="left">left</option>
+            <option value="right">right</option>
+        </select>
+        <br />
+
+        
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="lower-case">
-    <p>A simple node that converts the message payloads into all lower-case characters</p>
+<script type="text/x-red" data-help-name="motor-out">
+    <p>A simple node that converts the message payloads into all motor-out characters</p>
 </script>
